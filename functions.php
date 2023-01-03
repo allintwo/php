@@ -6,20 +6,6 @@
  * Time: 11:53 AM
  */
 
-
-function make_readwriteable($folder)
-{
-    if(is_dir($folder))
-    {
-     if(is_writable($folder))
-     {
-
-     }else{
-         chmod($folder,0755);
-     }
-    }
-}
-
 function fix_folder_permission($foldername,$ignores = '')
 {
 
@@ -63,11 +49,8 @@ function fix_folder_permission($foldername,$ignores = '')
     }
 
 }
-$folder = $_SERVER['DOCUMENT_ROOT']. '/wp/wp-content/uploads/2022/04/';
 
+$folder = $_SERVER['DOCUMENT_ROOT']. '/wp/wp-content/uploads/2022/04/';
 $foldername = realpath($folder);
-// echo $foldername;
 fix_folder_permission($foldername);
-// echo is_readable($foldername);
-//
 //echo substr(sprintf('%o', fileperms('pay')), -4);
